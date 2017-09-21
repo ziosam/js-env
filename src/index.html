@@ -11,10 +11,28 @@
   <!DOCTYPE html>
   <html lang="en">
   <head>
+      <% if (htmlWebpackPlugin.options.trackJSToken) { %>
+         <!-- BEGIN TRACKJS -->
+         <script type="text/javascript">window._trackJs = { token: '<%=htmlWebpackPlugin.options.trackJSToken%>' };</script>
+         <script type="text/javascript" src="https://cdn.trackjs.com/releases/current/tracker.js"></script>
+         <!-- END TRACKJS -->
+      <% } %>
     <meta charset="UTF-8">
   </head>
   <body>
-    <h1>Test JS environment</h1>
-    <script src="bundle.js"></script>
+   <h1>Users</h1>
+   <table>
+     <thead>
+       <th>&nbsp;</th>
+       <th>Id</th>
+       <th>First Name</th>
+       <th>Last Name</th>
+       <th>Email</th>
+     </thead>
+     <tbody id="users">
+
+     </tbody>
+   </table>
+    <!-- <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=fetch"></script> Load polyfill js only if needed -->
   </body>
   </html>
